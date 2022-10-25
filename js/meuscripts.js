@@ -39,10 +39,7 @@ const data = [
 
 //seleção de elementos
 
-//vai aparecer depois que tiver os resultados de tabela
 const imcTabela = document.querySelector("#resultado__tabela");
-
-
 
 //capturando elementos do form
 const inputAltura = document.querySelector("#altura");
@@ -50,19 +47,22 @@ const inputPeso = document.querySelector("#peso");
 const botaoCalculo = document.querySelector("#calculadora__botao-calcular");
 const botaoLimpar = document.querySelector("#calculadora__botao-limpar");
 
+const imcResultado = document.querySelector('#imc__resultado span');
+const imcSituacao = document.querySelector('#imc__situacao span');
+
+const btnVoltar = document.querySelector('#resultado__table__botao-voltar');
+
+const calcContainer = document.querySelector('.calculadora__container');
+const resultContainer = document.querySelector('#resultado__container');
+
 //funções
 
 //criar tabela recebendo o array data definido no começo.
 function criarTabela(data) {
-    //foeEach percorrendo o array e transformando em cada um dos itens
     data.forEach(item => {
-
-        //criando um elemento div com a classe resultado__tabela-data
         const div = document.createElement("div");
         div.classList.add("resultado__tabela-data");
 
-
-        //criando os p para aparecer e recebe o item do array data e acessa pelo item que é cada elemento do array . classification que é o nome da chave de localização no array
         const classification = document.createElement("p");
         classification.innerText = item.classification;
         
@@ -77,7 +77,6 @@ function criarTabela(data) {
         div.appendChild(obesity);
 
         imcTabela.appendChild(div);
-
     });
 }
 
@@ -85,6 +84,8 @@ function criarTabela(data) {
 function limparInputs() {
     inputAltura.value = "";
     inputPeso.value = "";
+    imcResultado.classList = "";
+    imcSituacao.classList = "";
 };
 
 //função para validação por regex nos inputs
@@ -93,10 +94,15 @@ function validarDigitos(text) {
 }
 
 function calculoImc(altura, peso) {
-  //tofixed arredonda o volor recebido para o numero de casas informado
   const imc = (peso / (altura * altura)).toFixed(1);
   return imc;
 }
+
+function mostrarOuEsconderResultados() {
+  calcContainer.classList.toggle("resultado__hide")
+  resultContainer.classList.toggle("resultado__hide")
+}
+
 
 
 
@@ -107,8 +113,6 @@ criarTabela(data);
 
 //eventos
 
-
-//consegue percorrer as duas consts pois as duas tem exatamente as mesmas propriedades
 [inputAltura, inputPeso].forEach((el) => {
     el.addEventListener("input", (e) => {
         const updatedValue = validarDigitos(e.target.value);
@@ -135,14 +139,37 @@ botaoCalculo.addEventListener("click", (e) => {
     }
   })
 
-  console.log(info);
 
   if (!info) return;
   
+  imcResultado.innerText = imc
+  imcSituacao.innerText = info
 
+  switch (info) {
+    case "Magreza":
+      imcResultado.classList.add("alerta");
+      imcSituacao.classList.add("alerta");
+      break;
+    case "Normal":
+      imcResultado.classList.add("bom");
+      imcSituacao.classList.add("bom");
+      break;
+    case "Sobrepeso":
+      imcResultado.classList.add("alerta");
+      imcSituacao.classList.add("alerta");
+      break;
+    case "Obesidade":
+      imcResultado.classList.add("obesidade");
+      imcSituacao.classList.add("obesidade");
+      break;
+    case "Obesidade grave":
+      imcResultado.classList.add("obesidade__grave");
+      imcSituacao.classList.add("obesidade__grave");
+      break;
+  }
+  
+  mostrarOuEsconderResultados()
 })
-
-
 
 //evento limpar o botao
 botaoLimpar.addEventListener("click", (e) => {
@@ -150,5 +177,8 @@ botaoLimpar.addEventListener("click", (e) => {
     limparInputs()
 })
 
-
+btnVoltar.addEventListener("click", () => {
+  limparInputs()
+  mostrarOuEsconderResultados()
+});
 
