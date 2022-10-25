@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>Calculadores IMC</title>
+    <script src="js/meuscripts.js" defer></script>
+</head>
+
+<body>
+    <main class="conteudo">
+        <section class="container__principal">
+            <div class="calculadora__container resultado__hde">
+                <h2 class="calculadora__titulo"> Calcule o Seu IMC</h2>
+                <form id="calculadora__form">
+                    <div class="calculadora__form-container">
+                        <div class="calculadora__form__container-labels">
+                            <label class="calculadora__form-labels" for="altura"> Digite a sua Altura: </label>
+                            <input class="calculadora__form-inputs" type="text" name="altura" id="altura"
+                            placeholder="EX: 1,70">
+                        </div>
+                        <div class="calculadora__form__container-labels">
+                            <label class="calculadora__form-labels" for="peso"> Digite o seu Peso: </label>
+                            <input class="calculadora__form-inputs" type="text" name="peso" id="peso"
+                            placeholder="EX: 85,2">
+                        </div>
+                    </div>
+                    <section class="calculadora__botoes-container">
+                        <button id="calculadora__botao-calcular"> Calcular </button>
+                        <button id="calculadora__botao-limpar"> Limpar </button>
+                    </section>
+                </form>
+            </div>
+
+
+            <div id="resultado__container" class="resultado__hide">
+                <p id="imc__resultado">Seu IMC: <span></span></p>
+                <p id="imc__situacao">Situação atual: <span></span></p>
+                <h3>Confira as classificações</h3>
+                <div id="resultado__tabela">
+                    <div class="resultado__tabela-header">
+                        <h4>IMC</h4>
+                        <h4>Classificação</h4>
+                        <h4>Obesidade</h4>
+                    </div>                    
+                </div>
+                <button id="resultado__table__botao-voltar"> Voltar </button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

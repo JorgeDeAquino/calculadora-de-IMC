@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+.resultado__hide {
+    display: none !important;
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #888a8a;
+    color: #fdfdfd;
+}
+
+.container__principal {
+    min-height: 50vh;
+    width: 50vw;
+    background-color: #bdbfbf;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.calculadora__titulo {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.calculadora__form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.calculadora__form__container-labels {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.calculadora__form-labels {
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.calculadora__form-inputs {
+    padding: 0.5rem 0.3rem;
+    font-size: 1rem;
+}
+
+
+.calculadora__botoes-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1.7rem;
+}
+
+button {
+    text-transform: uppercase;
+    padding: 0.7rem 1.3rem;
+    background-color: lightcoral;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    color: #fdfdfd;
+    cursor: pointer;
+    opacity: 0.8;
+    flex: 1;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+#calculadora__botao-limpar {
+    background-color: #888a8a;
+}
+
+
+
+/* table */
+
+#resultado__container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#imc__resultado {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+#imc__situacao {
+    font-size: 1.5rem;
+    color: #d3d3d3;
+}
+
+#resultado__container h3 {
+    margin-top: 0.5rem;
+    color: #fff;    
+    font-size: 1.3rem;
+}
+
+#resultado__tabela {
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+    color: #fff;    
+}
+
+.resultado__tabela-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resultado__tabela-header, .resultado__tabela-data {
+    display: flex;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.resultado__tabela-header h4, .resultado__tabela-data p {
+    flex: 1;
+}
+
+.resultado__tabela-header h4:nth-child(3), .resultado__tabela-data p:nth-child(3) {
+    flex: 0.5;
+}
+
+#resultado__table__botao-voltar {
+    align-self: center;
+}
+
+
+/*Classes de auxilio com resposta visual*/
+.bom {
+    color: #12db34;
+}
+  
+.sobrepeso {
+    color: #dbce12;
+}
+  
+.obesidade {
+    color: #db6212;
+}
+  
+.obesidade__alta {
+    color: #db1912;
+}
