@@ -12,7 +12,10 @@
     justify-content: center;
     min-height: 100vh;
     width: 100vw;
-    background-color: #888a8a;
+    background-image: url(https://images.unsplash.com/photo-1625225233840-695456021cde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #fdfdfd;
 }
 
@@ -66,11 +69,11 @@
 button {
     text-transform: uppercase;
     padding: 0.7rem 1.3rem;
-    background-color: lightcoral;
+    background-color: rgb(232, 12, 12);
     font-size: 1.1rem;
     font-weight: 500;
     border: none;
-    color: #fdfdfd;
+    color: #ffffff;
     cursor: pointer;
     opacity: 0.8;
     flex: 1;
@@ -81,7 +84,7 @@ button:hover {
 }
 
 #calculadora__botao-limpar {
-    background-color: #888a8a;
+    background-color: #388282;
 }
 
 
@@ -102,18 +105,18 @@ button:hover {
 
 #imc__situacao {
     font-size: 1.5rem;
-    color: #d3d3d3;
+    color: #f6f0f0;
 }
 
 #resultado__container h3 {
     margin-top: 0.5rem;
-    color: #fff;    
+    color: rgb(255, 255, 255);    
     font-size: 1.3rem;
 }
 
 #resultado__tabela {
     margin: 1.5rem 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #fff;    
 }
 
@@ -126,7 +129,7 @@ button:hover {
     display: flex;
     margin-bottom: 0.5rem;
     padding-bottom: 0.2rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgb(224, 218, 218);
 }
 
 .resultado__tabela-header h4, .resultado__tabela-data p {
@@ -152,7 +155,7 @@ button:hover {
 }
   
 .obesidade {
-    color: #db6212;
+    color: #eb6308;
 }
   
 .obesidade__alta {
