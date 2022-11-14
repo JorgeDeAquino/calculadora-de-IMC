@@ -163,8 +163,8 @@ botaoCalculo.addEventListener("click", (e) => {
       imcSituacao.classList.add("obesidade");
       break;
     case "Obesidade grave":
-      imcResultado.classList.add("obesidade__grave");
-      imcSituacao.classList.add("obesidade__grave");
+      imcResultado.classList.add("obesidade__alta");
+      imcSituacao.classList.add("obesidade__alta");
       break;
   }
   
